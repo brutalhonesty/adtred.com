@@ -1,0 +1,47 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600,300italic,600italic);
+
+/**
+ * App-wide Styles
+ */
+ body {
+   font-family: "Open Sans", sans-serif;
+ }
+
+ .navbar-inverse {
+   background-color: transparent;
+   border-color: transparent;
+ }
+ .navbar-inverse .navbar-toggle {
+   background-color: #222;
+   opacity: 0.7;
+ }
+
+ /* Angular Strap */
+ .modal-backdrop.am-fade {
+  opacity: .5;
+  transition: opacity .15s linear;
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: .5;
+    }
+  }
+  &.ng-leave {
+    opacity: .5;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'ads/add/add.scss';
+@import 'home/home.scss';
+@import 'main/main.scss';
+// endinjector

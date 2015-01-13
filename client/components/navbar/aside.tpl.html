@@ -1,0 +1,19 @@
+<div class="aside" tabindex="-1" role="dialog">
+  <div class="aside-dialog">
+    <div class="aside-content">
+      <div class="aside-body" ng-show="menu">
+        <div class="navbar navbar-inverse" role="navigation" bs-navbar>
+          <ul class="nav navbar-nav">
+            <li ng-repeat="item in menu">
+              <a ng-href="{{item.link}}">{{item.title}}</a>
+            </li>
+            <li>
+              <a ng-click="login()" ng-if="!isAuthenticated">Login</a>
+              <a ng-click="logout()" ng-if="isAuthenticated">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

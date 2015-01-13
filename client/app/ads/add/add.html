@@ -1,0 +1,44 @@
+<div id="addContainer">
+  <div ng-include="'components/navbar/navbar.html'"></div>
+    <div class="container">
+      <form ng-submit="addAd()">
+        <div class="form-group">
+          <label for="name">Advertisment Name</label>
+          <input type="text" class="form-control" id="name" ng-model="name" placeholder="The name of the ad" autofocus>
+        </div>
+        <div class="form-group">
+          <label for="url">Advertisement URL</label>
+          <input type="url" class="form-control" id="url" ng-model="url" placeholder="The url of the ad (optional)">
+        </div>
+        <div class="form-group">
+          <label for="video">Advertisement Video</label>
+          <input type="url" class="form-control" id="video" ng-model="video" placeholder="The video link to the ad" ng-required="!image">
+        </div>
+        <div class="form-group">
+          <label for="image">Advertisement Image</label>
+          <input type="url" class="form-control" id="image" ng-model="image" placeholder="The image link to the ad" ng-required="!video">
+        </div>
+        <div class="form-group">
+          <div class="col-md-6">
+            <label for="company">Company</label>
+            <input type="text" id="company" class="form-control" ng-model="company" ng-html="1" template="app/ads/add/select-company.tpl.html" ng-options="value as value.name for (key, value) in companies" placeholder="Search for a company" bs-typeahead autocomplete="off" required>
+          </div>
+          <div class="col-md-6">
+            <label for="preview">Company Logo Preview</label>
+            <img id="preview" ng-src="{{company.image || '//placehold.it/500x150/ffffff&amp;text=Waiting%20for%20company...'}}" class="img-thumbnail img-responsive" width="500" height="150">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="radio">Initial Vote</label>
+          <label class="radio-inline">
+            <input type="radio" name="radio" ng-model="count" id="radio" value="1"> Like
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="radio" ng-model="count" id="radio" value="-1"> Dislike
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  <div ng-include="'components/footer/footer.html'"></div>
+</div>

@@ -1,0 +1,30 @@
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" ng-show="title">
+        <button type="button" class="close" ng-click="$hide()">&times;</button>
+        <h4 class="modal-title" ng-bind-html="title"></h4>
+      </div>
+      <form ng-submit="addCompany()" name="companyForm">
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="name">Company Name</label>
+              <input type="text" class="form-control" ng-model="name" placeholder="Name of the company" autofocus required>
+            </div>
+            <div class="form-group">
+              <label for="name">Company URL</label>
+              <input type="url" class="form-control" ng-model="url" placeholder="Link to the company's website" required>
+            </div>
+            <div class="form-group">
+              <label for="name">Company Logo</label>
+              <input type="url" class="form-control" ng-model="image" placeholder="Image link of the company logo" required>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+          <button type="submit" class="btn btn-primary">Add Company</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
